@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<pcToLineNum>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceApp.mc" lineNum="5" pc="268435456" symbol="initialize"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceApp.mc" lineNum="6" pc="268435460" symbol="initialize"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceApp.mc" lineNum="10" pc="268435479" symbol="onStart"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceApp.mc" lineNum="14" pc="268435484" symbol="onStop"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceApp.mc" lineNum="18" pc="268435489" symbol="getInitialView"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceApp.mc" lineNum="19" pc="268435493" symbol="getInitialView"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceTests.mc" lineNum="7" pc="268435531" symbol="assertEq"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceTests.mc" lineNum="8" pc="268435543" symbol="assertEq"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceTests.mc" lineNum="9" pc="268435543" symbol="assertEq"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceTests.mc" lineNum="11" pc="268435591" symbol="assertEq"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceTests.mc" lineNum="12" pc="268435649" symbol="assertEq"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="36" pc="268435665" symbol="initialize"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="37" pc="268435669" symbol="initialize"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="44" pc="268435688" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="45" pc="268435692" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="46" pc="268435719" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="47" pc="268435746" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="48" pc="268435773" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="49" pc="268435792" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="50" pc="268435819" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="51" pc="268435846" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="52" pc="268435873" symbol="compute"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="57" pc="268435901" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="59" pc="268435905" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="60" pc="268435941" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="63" pc="268435953" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="64" pc="268435989" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="65" pc="268436030" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="66" pc="268436071" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="67" pc="268436112" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="70" pc="268436153" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="72" pc="268436189" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="73" pc="268436222" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="75" pc="268436294" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="76" pc="268436327" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="78" pc="268436399" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="79" pc="268436456" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="80" pc="268436513" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="81" pc="268436579" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="84" pc="268436645" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="86" pc="268436681" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="87" pc="268436741" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="88" pc="268436801" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="89" pc="268436861" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="91" pc="268436921" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="92" pc="268436981" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="93" pc="268437041" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="94" pc="268437101" symbol="onUpdate"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="97" pc="268437162" symbol="maybe"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="98" pc="268437166" symbol="maybe"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="99" pc="268437173" symbol="maybe"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="101" pc="268437179" symbol="maybe"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="103" pc="268437183" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="104" pc="268437187" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="106" pc="268437197" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="107" pc="268437207" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="109" pc="268437217" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="110" pc="268437228" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="113" pc="268437271" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="114" pc="268437281" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="116" pc="268437291" symbol="formatDuration"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="118" pc="268437355" symbol="formatDistance"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="119" pc="268437359" symbol="formatDistance"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="120" pc="268437366" symbol="formatDistance"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="122" pc="268437375" symbol="formatDistance"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="123" pc="268437385" symbol="formatDistance"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="124" pc="268437396" symbol="formatDistance"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="126" pc="268437416" symbol="formatDistance"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="128" pc="268437434" symbol="formatInteger"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="129" pc="268437438" symbol="formatInteger"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="130" pc="268437445" symbol="formatInteger"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="132" pc="268437454" symbol="formatInteger"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="134" pc="268437472" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="135" pc="268437476" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="136" pc="268437497" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="138" pc="268437506" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="139" pc="268437516" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="140" pc="268437526" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="141" pc="268437539" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="142" pc="268437552" symbol="formatPace"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="144" pc="268437579" symbol="getCurrentTime"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="145" pc="268437583" symbol="getCurrentTime"/>
+<entry filename="/Users/glen/Development/eclipse-workspace/StatsGlance/source/StatsGlanceView.mc" lineNum="146" pc="268437602" symbol="getCurrentTime"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="8388644" module="true" symbol="System"/>
+<entry field="true" id="8388959" symbol="cadence"/>
+<entry field="true" id="15" symbol="xSpace"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry id="8388645" module="true" symbol="Time"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry field="true" id="8389138" symbol="label"/>
+<entry field="true" id="21" symbol="ySize"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="34" method="true" symbol="formatDuration"/>
+<entry id="8388640" module="true" symbol="Lang"/>
+<entry field="true" id="20" symbol="textRight"/>
+<entry id="8388639" module="true" symbol="Graphics"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry id="33" method="true" symbol="maybe"/>
+<entry id="8388649" module="true" object="true" symbol="Test"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry field="true" id="42" symbol="AppName"/>
+<entry field="true" id="8388935" method="true" symbol="duration"/>
+<entry field="true" id="10" symbol="view"/>
+<entry id="12" object="true" symbol="StatsGlanceView"/>
+<entry field="true" id="41" symbol="LauncherIcon"/>
+<entry id="8388648" module="true" symbol="WatchUi"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry field="true" id="19" symbol="textLeft"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry id="8389137" method="true" symbol="compute"/>
+<entry field="true" id="26" symbol="y3l"/>
+<entry field="true" id="24" symbol="y2l"/>
+<entry id="35" method="true" symbol="formatDistance"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry field="true" id="32" symbol="elevation"/>
+<entry field="true" id="8388958" symbol="speed"/>
+<entry field="true" id="28" symbol="ylMargin"/>
+<entry id="11" method="true" symbol="assertEq"/>
+<entry field="true" id="14" symbol="xMid"/>
+<entry field="true" id="30" symbol="time"/>
+<entry field="true" id="18" symbol="yC"/>
+<entry field="true" id="17" symbol="yB"/>
+<entry field="true" id="16" symbol="yA"/>
+<entry field="true" id="8388911" symbol="distance"/>
+<entry field="true" id="27" symbol="y4"/>
+<entry field="true" id="25" symbol="y3"/>
+<entry field="true" id="23" symbol="y2"/>
+<entry field="true" id="22" symbol="y1"/>
+<entry id="40" module="true" symbol="Layouts"/>
+<entry id="37" method="true" symbol="formatPace"/>
+<entry field="true" id="31" symbol="avgSpeed"/>
+<entry id="9" object="true" symbol="StatsGlanceApp"/>
+<entry id="8390088" module="true" object="true" symbol="JsonData"/>
+<entry id="36" method="true" symbol="formatInteger"/>
+<entry id="39" module="true" symbol="Menus"/>
+<entry field="true" id="29" symbol="hr"/>
+<entry field="true" id="13" symbol="xSize"/>
+<entry id="38" method="true" symbol="getCurrentTime"/>
+<entry id="8388772" module="true" object="true" symbol="Fonts"/>
+<entry id="8388635" module="true" symbol="Application"/>
+</symbolTable>
+<localVars>
+<entry endPc="268435484" name="state" stackId="1" startPc="268435479"/>
+<entry endPc="268435489" name="state" stackId="1" startPc="268435484"/>
+<entry endPc="268435665" name="logger" stackId="1" startPc="268435531"/>
+<entry endPc="268435665" name="expected" stackId="3" startPc="268435531"/>
+<entry endPc="268435665" name="actual" stackId="2" startPc="268435531"/>
+<entry endPc="268435901" name="info" stackId="1" startPc="268435688"/>
+<entry endPc="268437161" name="elevationWidth" stackId="3" startPc="268435905"/>
+<entry endPc="268437161" name="distanceWidth" stackId="2" startPc="268435905"/>
+<entry endPc="268437162" name="dc" stackId="1" startPc="268435901"/>
+<entry endPc="268437183" name="maybeValue" stackId="1" startPc="268437162"/>
+<entry endPc="268437183" name="fallback" stackId="2" startPc="268437162"/>
+<entry endPc="268437354" name="hours" stackId="5" startPc="268437187"/>
+<entry endPc="268437354" name="minutes" stackId="3" startPc="268437187"/>
+<entry endPc="268437354" name="totalSeconds" stackId="2" startPc="268437187"/>
+<entry endPc="268437354" name="seconds" stackId="4" startPc="268437187"/>
+<entry endPc="268437355" name="milliseconds" stackId="1" startPc="268437183"/>
+<entry endPc="268437433" name="km" stackId="2" startPc="268437359"/>
+<entry endPc="268437434" name="maybeDistance" stackId="1" startPc="268437355"/>
+<entry endPc="268437472" name="maybeNumber" stackId="1" startPc="268437434"/>
+<entry endPc="268437578" name="minPerKmSecs" stackId="5" startPc="268437476"/>
+<entry endPc="268437578" name="minPerKmMins" stackId="4" startPc="268437476"/>
+<entry endPc="268437578" name="minPerKm" stackId="3" startPc="268437476"/>
+<entry endPc="268437578" name="mPerMin" stackId="2" startPc="268437476"/>
+<entry endPc="268437579" name="maybePace" stackId="1" startPc="268437472"/>
+<entry endPc="268437677" name="clockTime" stackId="1" startPc="268437583"/>
+</localVars>
+<annotations/>
+<functions>
+<functionEntry accessMode="public" name="initialize" parent="StatsGlanceApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStart" parent="StatsGlanceApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStop" parent="StatsGlanceApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getInitialView" parent="StatsGlanceApp">
+<documentation><![CDATA[<div class="description"> Return the initial view of your application here<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry accessMode="public" name="assertEq">
+<param id="logger"/>
+<param id="actual"/>
+<param id="expected"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="StatsGlanceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="compute" parent="StatsGlanceView">
+<param id="info"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onUpdate" parent="StatsGlanceView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="maybe" parent="StatsGlanceView">
+<param id="maybeValue"/>
+<param id="fallback"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="formatDuration" parent="StatsGlanceView">
+<param id="milliseconds"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="formatDistance" parent="StatsGlanceView">
+<param id="maybeDistance"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="formatInteger" parent="StatsGlanceView">
+<param id="maybeNumber"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="formatPace" parent="StatsGlanceView">
+<param id="maybePace"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getCurrentTime" parent="StatsGlanceView">
+<documentation/>
+</functionEntry>
+</functions>
+<dataEntryOffsetMappings>
+<dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
+<dataEntry offset="190" parentId="globals" symbolId="StatsGlanceView" type="class"/>
+<dataEntry offset="493" parentId="globals" symbolId="StatsGlanceApp" type="class"/>
+<dataEntry offset="564" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="643" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="682" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="713" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="744" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="775" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="806" parentId="Rez" symbolId="Strings" type="module"/>
+</dataEntryOffsetMappings>
+</debugInfo>
