@@ -1,11 +1,17 @@
-DEVICE=fenix3_hr
+DEVICE:=fenix3_hr
+COMPILEFLAGS:=
+DOFLAGS:=
 
-testflag=
-outfile=bin/StatsGlance.prg
+wait:=&
+outfile:=bin/StatsGlance.prg
 
-.PHONY: test execute check-env
+.PHONY: release compile test execute check-env
 
-default: $(outfile)
+release: COMPILEFLAGS+= --release
+release: outfile:=$(subst .prg,-release.prg,$(outfile))
+release: $(outfile)
+
+compile: $(outfile)
 
 check-env:
 ifndef KEY
@@ -18,11 +24,13 @@ $(outfile): check-env
 		--output $(outfile) \
 		--jungles monkey.jungle \
 		--private-key "$(KEY)" \
-		$(testflag)
+		$(COMPILEFLAGS)
 
-# would rather use --unit-test but that doesn't work on monkeydo
-test: testflag=-t
+test: COMPILEFLAGS+= --unit-test
+test: DOFLAGS+=-t
+test: wait:=
+test: outfile:=$(subst .prg,-test.prg,$(outfile))
 test: execute
 
 execute: $(outfile)
-	monkeydo $(outfile) $(DEVICE) $(testflag)
+	monkeydo $(outfile) $(DEVICE) $(DOFLAGS) $(wait)

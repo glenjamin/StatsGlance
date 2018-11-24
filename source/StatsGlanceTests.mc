@@ -6,18 +6,18 @@ var view = new StatsGlanceView();
 
 function assertEq(logger, actual, expected) {
   try {
-  Test.assertEqual(actual, expected);
+    Test.assertEqual(actual, expected);
   } catch (ex instanceof Test.AssertException) {
-  logger.error(Lang.format("Actual: $1$, Expected: $2$", [actual, expected]));
-  throw ex;
+    logger.error(Lang.format("Actual: $1$, Expected: $2$", [actual, expected]));
+    throw ex;
   }
 }
 
 (:test)
 function maybe(logger) {
-  assertEq(logger, view.maybe(10, 0), 10);
-  assertEq(logger, view.maybe(0, 0), 0);
-  assertEq(logger, view.maybe(null, 0), 0);
+  assertEq(logger, view.maybe(10), 10);
+  assertEq(logger, view.maybe(0), 0);
+  assertEq(logger, view.maybe(null), 0);
   return true;
 }
 
