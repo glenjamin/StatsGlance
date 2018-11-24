@@ -27,4 +27,16 @@ jobs:
             cd
             openssl genrsa -out developer_key.pem 4096
             openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out $KEY -nocrypt
-      - run: make
+
+      - run:
+          name: Run Tests
+          command: |
+            connectiq
+            make test
+
+      - run:
+          name: Create Release Build
+          command: make release
+
+      - store_artifacts:
+          path: /home/circleci/project/bin
