@@ -1,5 +1,6 @@
 using Toybox.Lang;
 using Toybox.System;
+using Toybox.Graphics;
 using Toybox.Test;
 
 var view = new StatsGlanceView();
@@ -18,6 +19,17 @@ function maybe(logger) {
   assertEq(logger, view.maybe(10), 10);
   assertEq(logger, view.maybe(0), 0);
   assertEq(logger, view.maybe(null), 0);
+  return true;
+}
+
+(:test)
+function cadenceZone(logger) {
+  assertEq(logger, view.cadenceZone(0), Graphics.COLOR_TRANSPARENT);
+  assertEq(logger, view.cadenceZone(169), Graphics.COLOR_TRANSPARENT);
+  assertEq(logger, view.cadenceZone(170), Graphics.COLOR_GREEN);
+  assertEq(logger, view.cadenceZone(179), Graphics.COLOR_GREEN);
+  assertEq(logger, view.cadenceZone(180), Graphics.COLOR_BLUE);
+  assertEq(logger, view.cadenceZone(181), Graphics.COLOR_BLUE);
   return true;
 }
 

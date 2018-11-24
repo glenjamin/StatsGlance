@@ -45,7 +45,7 @@ class StatsGlanceView extends WatchUi.DataField {
   // Note that compute() and onUpdate() are asynchronous, and there is no
   // guarantee that compute() will be called before onUpdate().
   function compute(info) {
-    duration = maybe(info.timerTime) + 3600000;
+    duration = maybe(info.timerTime);
     cadence = maybe(info.currentCadence);
     hr = maybe(info.currentHeartRate);
     distance = maybe(info.elapsedDistance);
@@ -70,12 +70,21 @@ class StatsGlanceView extends WatchUi.DataField {
     var durationY = y1;
     if (duration >= 3600000) {
       durationSize = Graphics.FONT_NUMBER_MILD;
-      durationY = y1 + 25;
+      durationY = y1 + 24;
     }
 
     // Background
     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
     dc.clear();
+
+    // HR / Cadence Zones
+    var cadenceColor = cadenceZone(cadence);
+    if (cadenceColor != Graphics.COLOR_TRANSPARENT) {
+      dc.setColor(cadenceColor, Graphics.COLOR_TRANSPARENT);
+      dc.fillRectangle(0, 69, 40, 58);
+    }
+    /* dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
+    dc.fillRectangle(0, 127, 40, 58); */
 
     // Gridlines
     dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
@@ -85,7 +94,7 @@ class StatsGlanceView extends WatchUi.DataField {
     dc.drawLine(0, yC, xSize, yC);
 
     // Labels
-    dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
 
     var distanceWidth = dc.getTextWidthInPixels(lDistance, Graphics.FONT_NUMBER_MEDIUM);
     dc.drawText(textRight + distanceWidth + 2, y1 + 38, Graphics.FONT_XTINY, "km", Graphics.TEXT_JUSTIFY_LEFT);
@@ -95,8 +104,8 @@ class StatsGlanceView extends WatchUi.DataField {
 
     dc.drawText(y2lMargin, y2l, Graphics.FONT_TINY, "cad", Graphics.TEXT_JUSTIFY_LEFT);
     dc.drawText(y3lMargin, y3l, Graphics.FONT_TINY, "hr", Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(ySize - y2lMargin, y2l, Graphics.FONT_TINY, "avg", Graphics.TEXT_JUSTIFY_RIGHT);
-    dc.drawText(ySize - y3lMargin, y3l, Graphics.FONT_TINY, "spd", Graphics.TEXT_JUSTIFY_RIGHT);
+    dc.drawText(ySize - y2lMargin, y2l, Graphics.FONT_XTINY, "avg", Graphics.TEXT_JUSTIFY_RIGHT);
+    dc.drawText(ySize - y3lMargin, y3l, Graphics.FONT_XTINY, "spd", Graphics.TEXT_JUSTIFY_RIGHT);
 
     // Data
     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
@@ -117,6 +126,16 @@ class StatsGlanceView extends WatchUi.DataField {
     	return 0;
     }
     return maybeValue;
+  }
+
+  function cadenceZone(n) {
+    if (n >= 180) {
+      return Graphics.COLOR_BLUE;
+    }
+    if (n >= 170) {
+      return Graphics.COLOR_GREEN;
+    }
+    return Graphics.COLOR_TRANSPARENT;
   }
 
   function formatDuration(milliseconds) {
