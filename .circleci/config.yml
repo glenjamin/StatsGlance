@@ -2,16 +2,33 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/openjdk:10-jdk
     environment:
       KEY: /home/circleci/developer_key.der
     steps:
       - restore_cache:
           key: connectiq-sdk
       - run:
-          name: Install ConnectIQ SDK
+          name: Install apt dependencies
+          working_directory: /home/circleci
           command: |
-            cd
+            sudo apt update
+            sudo apt install libusb-1.0 libwebkitgtk-1.0
+
+            # libpng12 and libjpeg8 are annoyingly not available on this debian :(
+            # but we can get them from a compatible older .deb files
+            wget http://ftp.debian.org/debian/pool/main/libj/libjpeg8/libjpeg8_8d-1+deb7u1_amd64.deb
+            sudo apt install ./libjpeg8_8d-1+deb7u1_amd64.deb
+
+            wget http://ftp.debian.org/debian/pool/main/libp/libpng/libpng12-0_1.2.50-2+deb8u3_amd64.deb
+            # This deb only installs if we exclude the individual /usr/lib symlink
+            echo 'path-exclude /usr/lib/*' | sudo tee /etc/dpkg/dpkg.cfg.d/01_nousrlib
+            sudo apt install ./libpng12-0_1.2.50-2+deb8u3_amd64.deb
+            sudo rm /etc/dpkg/dpkg.cfg.d/01_nousrlib
+      - run:
+          name: Install ConnectIQ SDK
+          working_directory: /home/circleci
+          command: |
             if [ ! -d "/home/circleci/connectiq" ]; then
               wget https://developer.garmin.com/downloads/connect-iq/beta/sdks/connectiq-sdk-lin-3.0.0-beta3.zip
               unzip connectiq-sdk-lin-3.0.0-beta3.zip -d /home/circleci/connectiq
@@ -23,16 +40,26 @@ jobs:
       - checkout
       - run:
           name: Generate Ephemeral Developer Key
+          working_directory: /home/circleci
           command: |
-            cd
             openssl genrsa -out developer_key.pem 4096
             openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out $KEY -nocrypt
 
       - run:
           name: Run Tests
           command: |
-            connectiq
+            # Run virtual framebuffer and simulator in the background
+            export DISPLAY=:99
+            Xvfb $DISPLAY &
+            connectiq &
+
             make test
+            RETVAL=$?
+
+            # Cleanup background jobs
+            kill %1 %2
+
+            exit $RETVAL
 
       - run:
           name: Create Release Build
