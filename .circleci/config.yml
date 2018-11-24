@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - restore_cache:
+          key: connectiq-sdk
+      - run:
+          name: Install ConnectIQ SDK
+          command: |
+            cd
+            if [ ! -d "/home/circleci/connectiq" ]; then
+              wget https://developer.garmin.com/downloads/connect-iq/beta/sdks/connectiq-sdk-lin-3.0.0-beta3.zip
+              unzip connectiq-sdk-lin-3.0.0-beta3.zip -d /home/circleci/connectiq
+            fi
+            echo 'export PATH=/home/circleci/connectiq/bin:$PATH' >> $BASH_ENV
+      - save_cache:
+          paths: /home/circleci/connectiq
+          key: connectiq-sdk
+      - checkout
+      - run: make
