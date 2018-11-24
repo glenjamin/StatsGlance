@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
+    environment:
+      KEY: /home/circleci/developer_key.der
     steps:
       - restore_cache:
           key: connectiq-sdk
@@ -19,4 +21,10 @@ jobs:
           paths: /home/circleci/connectiq
           key: connectiq-sdk
       - checkout
+      - run:
+          name: Generate Ephemeral Developer Key
+          command: |
+            cd
+            openssl genrsa -out developer_key.pem 4096
+            openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out $KEY -nocrypt
       - run: make
