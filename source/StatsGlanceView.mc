@@ -1,6 +1,7 @@
 using Toybox.WatchUi;
 using Toybox.Graphics;
 using Toybox.Time;
+using Toybox.UserProfile;
 
 class StatsGlanceView extends WatchUi.DataField {
 
@@ -25,6 +26,8 @@ class StatsGlanceView extends WatchUi.DataField {
   const y3lMargin = 8;
   const y4 = 182;
 
+  hidden var hrZones = [0, 0, 0, 0, 0, 0];
+
   hidden var duration = 0;
   hidden var cadence = 0;
   hidden var hr = 0;
@@ -38,6 +41,7 @@ class StatsGlanceView extends WatchUi.DataField {
   }
 
   function onLayout(dc) {
+    hrZones = UserProfile.getHeartRateZones(UserProfile.getCurrentSport());
   }
 
   // The given info object contains all the current workout information.
@@ -83,8 +87,11 @@ class StatsGlanceView extends WatchUi.DataField {
       dc.setColor(cadenceColor, Graphics.COLOR_TRANSPARENT);
       dc.fillRectangle(0, 69, 40, 58);
     }
-    /* dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
-    dc.fillRectangle(0, 127, 40, 58); */
+    var hrColor = hrZone(hr, hrZones);
+    if (hrColor != Graphics.COLOR_TRANSPARENT) {
+      dc.setColor(hrColor, Graphics.COLOR_TRANSPARENT);
+      dc.fillRectangle(0, 127, 40, 58);
+    }
 
     // Gridlines
     dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
@@ -133,6 +140,19 @@ class StatsGlanceView extends WatchUi.DataField {
       return Graphics.COLOR_BLUE;
     }
     if (n >= 170) {
+      return Graphics.COLOR_GREEN;
+    }
+    return Graphics.COLOR_TRANSPARENT;
+  }
+
+  function hrZone(n, zones) {
+    if (n > zones[4]) {
+      return Graphics.COLOR_ORANGE;
+    }
+    if (n > zones[3]) {
+      return Graphics.COLOR_YELLOW;
+    }
+    if (n > zones[2]) {
       return Graphics.COLOR_GREEN;
     }
     return Graphics.COLOR_TRANSPARENT;

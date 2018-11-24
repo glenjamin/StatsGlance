@@ -34,6 +34,24 @@ function cadenceZone(logger) {
 }
 
 (:test)
+function hrZone(logger) {
+  var hrZones = [100, 120, 140, 160, 175, 195];
+
+  assertEq(logger, view.hrZone(0, hrZones), Graphics.COLOR_TRANSPARENT);
+  assertEq(logger, view.hrZone(99, hrZones), Graphics.COLOR_TRANSPARENT);
+  assertEq(logger, view.hrZone(120, hrZones), Graphics.COLOR_TRANSPARENT);
+  assertEq(logger, view.hrZone(140, hrZones), Graphics.COLOR_TRANSPARENT);
+  assertEq(logger, view.hrZone(141, hrZones), Graphics.COLOR_GREEN);
+  assertEq(logger, view.hrZone(160, hrZones), Graphics.COLOR_GREEN);
+  assertEq(logger, view.hrZone(161, hrZones), Graphics.COLOR_YELLOW);
+  assertEq(logger, view.hrZone(175, hrZones), Graphics.COLOR_YELLOW);
+  assertEq(logger, view.hrZone(176, hrZones), Graphics.COLOR_ORANGE);
+  assertEq(logger, view.hrZone(195, hrZones), Graphics.COLOR_ORANGE);
+  assertEq(logger, view.hrZone(200, hrZones), Graphics.COLOR_ORANGE);
+  return true;
+}
+
+(:test)
 function formatDuration(logger) {
   assertEq(logger, view.formatDuration(0), "0:00");
   assertEq(logger, view.formatDuration(30000), "0:30");
