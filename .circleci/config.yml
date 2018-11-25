@@ -27,21 +27,21 @@ jobs:
 
       - restore_cache:
           # Cache the ConnectIQ SDK to avoid downloading 200MB from Garmin on every build
-          key: connectiq-sdk
+          key: connectiq-sdk-3.0.5
 
       - run:
           name: Install ConnectIQ SDK
           working_directory: /home/circleci
           command: |
             if [ ! -d "/home/circleci/connectiq" ]; then
-              wget https://developer.garmin.com/downloads/connect-iq/beta/sdks/connectiq-sdk-lin-3.0.0-beta3.zip
-              unzip connectiq-sdk-lin-3.0.0-beta3.zip -d /home/circleci/connectiq
+              wget https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-3.0.5-2018-11-20-1690028.zip
+              unzip connectiq-sdk-lin-*.zip -d /home/circleci/connectiq
             fi
             echo 'export PATH=/home/circleci/connectiq/bin:$PATH' >> $BASH_ENV
 
       - save_cache:
           paths: /home/circleci/connectiq
-          key: connectiq-sdk
+          key: connectiq-sdk-3.0.5
 
       - checkout
 
