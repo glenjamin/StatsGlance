@@ -2,12 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:10-jdk
+      - image: circleci/openjdk:8-jdk
     environment:
       KEY: /home/circleci/developer_key.der
     steps:
-      - restore_cache:
-          key: connectiq-sdk
+
       - run:
           name: Install apt dependencies
           working_directory: /home/circleci
@@ -25,6 +24,11 @@ jobs:
             echo 'path-exclude /usr/lib/*' | sudo tee /etc/dpkg/dpkg.cfg.d/01_nousrlib
             sudo apt install ./libpng12-0_1.2.50-2+deb8u3_amd64.deb
             sudo rm /etc/dpkg/dpkg.cfg.d/01_nousrlib
+
+      - restore_cache:
+          # Cache the ConnectIQ SDK to avoid downloading 200MB from Garmin on every build
+          key: connectiq-sdk
+
       - run:
           name: Install ConnectIQ SDK
           working_directory: /home/circleci
@@ -34,10 +38,13 @@ jobs:
               unzip connectiq-sdk-lin-3.0.0-beta3.zip -d /home/circleci/connectiq
             fi
             echo 'export PATH=/home/circleci/connectiq/bin:$PATH' >> $BASH_ENV
+
       - save_cache:
           paths: /home/circleci/connectiq
           key: connectiq-sdk
+
       - checkout
+      
       - run:
           name: Generate Ephemeral Developer Key
           working_directory: /home/circleci
