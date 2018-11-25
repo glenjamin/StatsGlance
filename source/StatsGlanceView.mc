@@ -9,22 +9,22 @@ class StatsGlanceView extends WatchUi.DataField {
   const xMid = 109;
   const xSpace = 5;
 
-  const yA = 68;
-  const yB = 127;
-  const yC = 185;
-
   const textLeft = xMid - xSpace;
   const textRight = xMid + xSpace;
 
+  const yA = 65;
+  const yB = 124;
+  const yC = 183;
+
   const ySize = 218;
-  const y1 = 11;
-  const y2 = 53;
-  const y2l = 105;
+  const y1 = 9;
+  const y2 = 50;
+  const y2l = 102;
   const y2lMargin = 5;
-  const y3 = 112;
-  const y3l = 127;
+  const y3 = 109;
+  const y3l = 124;
   const y3lMargin = 8;
-  const y4 = 182;
+  const y4 = 180;
 
   hidden var hrZones = [0, 0, 0, 0, 0, 0];
 
@@ -70,11 +70,9 @@ class StatsGlanceView extends WatchUi.DataField {
     var lSpeed = formatPace(speed);
     var lElevation = formatInteger(elevation);
 
-    var durationSize = Graphics.FONT_NUMBER_MEDIUM;
-    var durationY = y1;
+    var durationSize = Graphics.FONT_NUMBER_HOT;
     if (duration >= 3600000) {
-      durationSize = Graphics.FONT_NUMBER_MILD;
-      durationY = y1 + 24;
+      durationSize = Graphics.FONT_NUMBER_MEDIUM;
     }
 
     // Background
@@ -85,12 +83,12 @@ class StatsGlanceView extends WatchUi.DataField {
     var cadenceColor = cadenceZone(cadence);
     if (cadenceColor != Graphics.COLOR_TRANSPARENT) {
       dc.setColor(cadenceColor, Graphics.COLOR_TRANSPARENT);
-      dc.fillRectangle(0, 69, 40, 58);
+      dc.fillRectangle(0, yA, 40, yB - yA);
     }
     var hrColor = hrZone(hr, hrZones);
     if (hrColor != Graphics.COLOR_TRANSPARENT) {
       dc.setColor(hrColor, Graphics.COLOR_TRANSPARENT);
-      dc.fillRectangle(0, 127, 40, 58);
+      dc.fillRectangle(0, yB, 40, yC - yB);
     }
 
     // Gridlines
@@ -103,27 +101,26 @@ class StatsGlanceView extends WatchUi.DataField {
     // Labels
     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
 
+    dc.drawText(textLeft, y1 - 8, Graphics.FONT_XTINY, "avg", Graphics.TEXT_JUSTIFY_RIGHT);
+
     var distanceWidth = dc.getTextWidthInPixels(lDistance, Graphics.FONT_NUMBER_MEDIUM);
     dc.drawText(textRight + distanceWidth + 2, y1 + 38, Graphics.FONT_XTINY, "km", Graphics.TEXT_JUSTIFY_LEFT);
+
+    dc.drawText(y2lMargin, y2l, Graphics.FONT_TINY, "cad", Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(y3lMargin, y3l, Graphics.FONT_TINY, "hr", Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(ySize - y3lMargin, y3l, Graphics.FONT_XTINY, "spd", Graphics.TEXT_JUSTIFY_RIGHT);
 
     var elevationWidth = dc.getTextWidthInPixels(lElevation, Graphics.FONT_NUMBER_MILD);
     dc.drawText(textRight + elevationWidth + 2, y4, Graphics.FONT_XTINY, "m", Graphics.TEXT_JUSTIFY_LEFT);
 
-    dc.drawText(y2lMargin, y2l, Graphics.FONT_TINY, "cad", Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(y3lMargin, y3l, Graphics.FONT_TINY, "hr", Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(ySize - y2lMargin, y2l, Graphics.FONT_XTINY, "avg", Graphics.TEXT_JUSTIFY_RIGHT);
-    dc.drawText(ySize - y3lMargin, y3l, Graphics.FONT_XTINY, "spd", Graphics.TEXT_JUSTIFY_RIGHT);
-
     // Data
-    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-
-    dc.drawText(textLeft, durationY, durationSize, lDuration, Graphics.TEXT_JUSTIFY_RIGHT);
+    dc.drawText(textLeft, y1, Graphics.FONT_NUMBER_MEDIUM, lAvgSpeed, Graphics.TEXT_JUSTIFY_RIGHT);
     dc.drawText(textLeft, y2, Graphics.FONT_NUMBER_HOT, lCadence, Graphics.TEXT_JUSTIFY_RIGHT);
     dc.drawText(textLeft, y3, Graphics.FONT_NUMBER_HOT, lHr, Graphics.TEXT_JUSTIFY_RIGHT);
     dc.drawText(textLeft, y4, Graphics.FONT_NUMBER_MILD, getCurrentTime(), Graphics.TEXT_JUSTIFY_RIGHT);
 
     dc.drawText(textRight, y1, Graphics.FONT_NUMBER_MEDIUM, lDistance, Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(textRight, y2, Graphics.FONT_NUMBER_HOT, lAvgSpeed, Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(textRight, y2, durationSize, lDuration, Graphics.TEXT_JUSTIFY_LEFT);
     dc.drawText(textRight, y3, Graphics.FONT_NUMBER_HOT, lSpeed, Graphics.TEXT_JUSTIFY_LEFT);
     dc.drawText(textRight, y4, Graphics.FONT_NUMBER_MILD, lElevation, Graphics.TEXT_JUSTIFY_LEFT);
   }
