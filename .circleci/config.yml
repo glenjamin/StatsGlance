@@ -44,7 +44,7 @@ jobs:
           key: connectiq-sdk
 
       - checkout
-      
+
       - run:
           name: Generate Ephemeral Developer Key
           working_directory: /home/circleci
@@ -64,7 +64,8 @@ jobs:
             RETVAL=$?
 
             # Cleanup background jobs
-            kill %1 %2
+            kill %2
+            kill %1
 
             exit $RETVAL
 
