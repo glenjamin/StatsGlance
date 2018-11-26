@@ -13,7 +13,9 @@ class StatsGlanceView extends WatchUi.DataField {
   const textRight = xMid + xSpace;
 
   const yA = 65;
+  const yAB = yB - yA;
   const yB = 124;
+  const yBC = yC - yB;
   const yC = 183;
 
   const ySize = 218;
@@ -27,6 +29,11 @@ class StatsGlanceView extends WatchUi.DataField {
   const y4 = 180;
 
   hidden var hrZones = [0, 0, 0, 0, 0, 0];
+
+  hidden var intervalMode = false;
+  hidden var intervalDuration = 0;
+  hidden var intervalDistance = 0;
+  hidden var intervalLastDuration = 0;
 
   hidden var duration = 0;
   hidden var cadence = 0;
@@ -42,6 +49,16 @@ class StatsGlanceView extends WatchUi.DataField {
 
   function onLayout(dc) {
     hrZones = UserProfile.getHeartRateZones(UserProfile.getCurrentSport());
+  }
+
+  function onTimerLap() {
+    // If the first lap is less than 1 minute long, enable interval mode
+    if (intervalMode || duration < 60000) {
+      intervalMode = true;
+      intervalLastDuration = duration - intervalDuration;
+      intervalDuration = duration;
+      intervalDistance = distance;
+    }
   }
 
   // The given info object contains all the current workout information.
@@ -62,11 +79,17 @@ class StatsGlanceView extends WatchUi.DataField {
   // once a second when the data field is visible.
   function onUpdate(dc) {
     // Convert numbers to formatted strings
-    var lDuration = formatDuration(duration);
+    var lDuration = formatDuration(
+      intervalMode ? duration - intervalDuration : duration
+    );
     var lCadence = formatInteger(cadence);
     var lHr = formatInteger(hr);
-    var lDistance = formatDistance(distance);
-    var lAvgSpeed = formatPace(avgSpeed);
+    var lDistance = formatDistance(
+      intervalMode ? distance - intervalDistance : distance
+    );
+    var lTopLeftLabel = intervalMode ? "last" : "avg";
+    var lTopLeft = intervalMode
+      ? formatDuration(intervalLastDuration) : formatPace(avgSpeed);
     var lSpeed = formatPace(speed);
     var lElevation = formatInteger(elevation);
 
@@ -83,12 +106,12 @@ class StatsGlanceView extends WatchUi.DataField {
     var cadenceColor = cadenceZone(cadence);
     if (cadenceColor != Graphics.COLOR_TRANSPARENT) {
       dc.setColor(cadenceColor, Graphics.COLOR_TRANSPARENT);
-      dc.fillRectangle(0, yA, 40, yB - yA);
+      dc.fillRectangle(0, yA, 40, yAB);
     }
     var hrColor = hrZone(hr, hrZones);
     if (hrColor != Graphics.COLOR_TRANSPARENT) {
       dc.setColor(hrColor, Graphics.COLOR_TRANSPARENT);
-      dc.fillRectangle(0, yB, 40, yC - yB);
+      dc.fillRectangle(0, yB, 40, yBC);
     }
 
     // Gridlines
@@ -101,7 +124,7 @@ class StatsGlanceView extends WatchUi.DataField {
     // Labels
     dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
 
-    dc.drawText(textLeft, y1 - 8, Graphics.FONT_XTINY, "avg", Graphics.TEXT_JUSTIFY_RIGHT);
+    dc.drawText(textLeft, y1 - 8, Graphics.FONT_XTINY, lTopLeftLabel, Graphics.TEXT_JUSTIFY_RIGHT);
 
     var distanceWidth = dc.getTextWidthInPixels(lDistance, Graphics.FONT_NUMBER_MEDIUM);
     dc.drawText(textRight + distanceWidth + 2, y1 + 38, Graphics.FONT_XTINY, "km", Graphics.TEXT_JUSTIFY_LEFT);
@@ -114,7 +137,7 @@ class StatsGlanceView extends WatchUi.DataField {
     dc.drawText(textRight + elevationWidth + 2, y4, Graphics.FONT_XTINY, "m", Graphics.TEXT_JUSTIFY_LEFT);
 
     // Data
-    dc.drawText(textLeft, y1, Graphics.FONT_NUMBER_MEDIUM, lAvgSpeed, Graphics.TEXT_JUSTIFY_RIGHT);
+    dc.drawText(textLeft, y1, Graphics.FONT_NUMBER_MEDIUM, lTopLeft, Graphics.TEXT_JUSTIFY_RIGHT);
     dc.drawText(textLeft, y2, Graphics.FONT_NUMBER_HOT, lCadence, Graphics.TEXT_JUSTIFY_RIGHT);
     dc.drawText(textLeft, y3, Graphics.FONT_NUMBER_HOT, lHr, Graphics.TEXT_JUSTIFY_RIGHT);
     dc.drawText(textLeft, y4, Graphics.FONT_NUMBER_MILD, getCurrentTime(), Graphics.TEXT_JUSTIFY_RIGHT);
@@ -156,7 +179,7 @@ class StatsGlanceView extends WatchUi.DataField {
   }
 
   function formatDuration(milliseconds) {
-    var totalSeconds = milliseconds / 1000;
+    var totalSeconds = Math.round(milliseconds / 1000.0).toNumber();
 
     var minutes = totalSeconds / 60;
     var seconds = totalSeconds % 60;
