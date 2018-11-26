@@ -79,9 +79,8 @@ class StatsGlanceView extends WatchUi.DataField {
   // once a second when the data field is visible.
   function onUpdate(dc) {
     // Convert numbers to formatted strings
-    var lDuration = formatDuration(
-      intervalMode ? duration - intervalDuration : duration
-    );
+    var durationToShow = intervalMode ? duration - intervalDuration : duration;
+    var lDuration = formatDuration(durationToShow);
     var lCadence = formatInteger(cadence);
     var lHr = formatInteger(hr);
     var lDistance = formatDistance(
@@ -94,8 +93,10 @@ class StatsGlanceView extends WatchUi.DataField {
     var lElevation = formatInteger(elevation);
 
     var durationSize = Graphics.FONT_NUMBER_HOT;
-    if (duration >= 3600000) {
+    var durationY = y2;
+    if (durationToShow >= 3600000) {
       durationSize = Graphics.FONT_NUMBER_MEDIUM;
+      durationY += 19;
     }
 
     // Background
@@ -143,7 +144,7 @@ class StatsGlanceView extends WatchUi.DataField {
     dc.drawText(textLeft, y4, Graphics.FONT_NUMBER_MILD, getCurrentTime(), Graphics.TEXT_JUSTIFY_RIGHT);
 
     dc.drawText(textRight, y1, Graphics.FONT_NUMBER_MEDIUM, lDistance, Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(textRight, y2, durationSize, lDuration, Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(textRight, durationY, durationSize, lDuration, Graphics.TEXT_JUSTIFY_LEFT);
     dc.drawText(textRight, y3, Graphics.FONT_NUMBER_HOT, lSpeed, Graphics.TEXT_JUSTIFY_LEFT);
     dc.drawText(textRight, y4, Graphics.FONT_NUMBER_MILD, lElevation, Graphics.TEXT_JUSTIFY_LEFT);
   }
