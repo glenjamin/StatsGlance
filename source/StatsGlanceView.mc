@@ -208,7 +208,7 @@ class StatsGlanceView extends WatchUi.DataField {
   }
 
   function formatPace(mPerSec) {
-    if (mPerSec < 0.02) {
+    if (mPerSec <= 0.5) {
       return "0:00";
     }
     var mPerMin = mPerSec * 60.0;

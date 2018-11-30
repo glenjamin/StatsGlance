@@ -77,5 +77,8 @@ function formatDistance(logger) {
 function formatPace(logger) {
   assertEq(logger, view.formatPace(0), "0:00");
   assertEq(logger, view.formatPace(3.333), "5:00");
+  assertEq(logger, view.formatPace(0.833), "20:00");
+  // If really slow, call it zero
+  assertEq(logger, view.formatPace(0.5), "0:00");
   return true;
 }
