@@ -168,10 +168,10 @@ class StatsGlanceView extends WatchUi.DataField {
 
   function hrZone(n, zones) {
     if (n > zones[4]) {
-      return Graphics.COLOR_ORANGE;
+      return Graphics.COLOR_RED;
     }
     if (n > zones[3]) {
-      return Graphics.COLOR_YELLOW;
+      return Graphics.COLOR_ORANGE;
     }
     if (n > zones[2]) {
       return Graphics.COLOR_GREEN;

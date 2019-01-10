@@ -43,11 +43,11 @@ function hrZone(logger) {
   assertEq(logger, view.hrZone(140, hrZones), Graphics.COLOR_TRANSPARENT);
   assertEq(logger, view.hrZone(141, hrZones), Graphics.COLOR_GREEN);
   assertEq(logger, view.hrZone(160, hrZones), Graphics.COLOR_GREEN);
-  assertEq(logger, view.hrZone(161, hrZones), Graphics.COLOR_YELLOW);
-  assertEq(logger, view.hrZone(175, hrZones), Graphics.COLOR_YELLOW);
-  assertEq(logger, view.hrZone(176, hrZones), Graphics.COLOR_ORANGE);
-  assertEq(logger, view.hrZone(195, hrZones), Graphics.COLOR_ORANGE);
-  assertEq(logger, view.hrZone(200, hrZones), Graphics.COLOR_ORANGE);
+  assertEq(logger, view.hrZone(161, hrZones), Graphics.COLOR_ORANGE);
+  assertEq(logger, view.hrZone(175, hrZones), Graphics.COLOR_ORANGE);
+  assertEq(logger, view.hrZone(176, hrZones), Graphics.COLOR_RED);
+  assertEq(logger, view.hrZone(195, hrZones), Graphics.COLOR_RED);
+  assertEq(logger, view.hrZone(200, hrZones), Graphics.COLOR_RED);
   return true;
 }
 
