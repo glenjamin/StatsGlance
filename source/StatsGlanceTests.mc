@@ -64,7 +64,7 @@ function formatDuration(logger) {
 
 (:test)
 function formatDistance(logger) {
-  assertEq(logger, view.formatDistance(5000), "5.00");
+  assertEq(logger, view.formatDistance(5000), "5.01");
   assertEq(logger, view.formatDistance(5232), "5.23");
   assertEq(logger, view.formatDistance(7236), "7.24");
   assertEq(logger, view.formatDistance(9929), "9.93");
