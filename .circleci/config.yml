@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk-stretch
+      - image: circleci/openjdk@sha256:b5d7241de4b030d611d534eb3d2a31129a1e2a86b3b75729f117f7a27890607a
     environment:
       KEY: /home/circleci/developer_key.der
     steps:
